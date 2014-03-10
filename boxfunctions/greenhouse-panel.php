@@ -1,0 +1,500 @@
+<?php
+/**
+ * Name: Panel Profile
+ * GitHub URI: https://github.com/greenhouse47
+ * Description: Panel Profile User
+ * Author: Albert Sukmono
+ * Twitter: @greenbox_id
+ * Author website: http://www.greenboxindonesia.com
+ */
+
+/*---------------------------------------------------
+register settings
+----------------------------------------------------*/
+function theme_settings_init(){
+register_setting( 'theme_settings', 'theme_settings' );
+wp_enqueue_style("panel_style", get_template_directory_uri()."/boxfunctions/panel/css/panel.css", false, "1.0", "all");
+wp_enqueue_script("panel_script", get_template_directory_uri()."/boxfunctions/panel/js/panel_script.js", false, "1.0");
+}
+ 
+/*---------------------------------------------------
+add settings page to menu
+----------------------------------------------------*/
+function add_settings_page() {
+add_menu_page( __( 'Green Panel' .' Beta' ), __( 'Green' .' Panel' ), 'manage_options', 'settings', 'theme_settings_page');
+}
+ 
+/*---------------------------------------------------
+add actions
+----------------------------------------------------*/
+add_action( 'admin_init', 'theme_settings_init' );
+add_action( 'admin_menu', 'add_settings_page' );
+
+/* ----------------------------------------------------------
+Declare vars
+-----------------------------------------------------------*/
+$themename = "Greenhouse Beta";
+$shortname = "greenhouse";
+ 
+$categories = get_categories('hide_empty=0&orderby=name');
+$wp_getcat = array();
+foreach ($categories as $category_item ) {
+$wp_getcat[$category_item->cat_ID] = $category_item->cat_name;
+}
+array_unshift($wp_getcat, "Select a category");
+
+/* ---------------------------------------------------------
+Declare options
+----------------------------------------------------------- */
+ 
+$theme_options = array (
+ 
+array( "name" => $themename." Options",
+"type" => "title"),
+ 
+/* ---------------------------------------------------------
+General section
+----------------------------------------------------------- */
+array( "name" => "General",
+"type" => "section"),
+array( "type" => "open"),
+ 
+array(	"name" => "Header Logo",
+"desc" => "Use Custom Header Logo  Must <b>(32X32px)</b> On The Top Header?<br /><em>*Disable by default, Choose Yes to enable it.</em>",
+"id" => $shortname."_header_logo_activate",
+"type" => "select",
+"std" => "No",
+"options" => array("No", "Yes")),
+
+array(	"name" => "Header Logo URL",
+"desc" => "Insert The Full URL Location Of Your Header Logo Here <br /><em>*leave blank if not use</em>",
+"id" => $shortname."_header_logo_url",
+"type" => "text",
+"std" => get_bloginfo('template_directory') ."/img/logo_small_header_hmi.png"
+),
+
+array(	"name" => "Title Header",
+"desc" => "You can customize Title Header on top header area her.<br /><em>*Disable by default, Choose Yes to enable it.</em>",
+"id" => $shortname."_title_header_activate",
+"type" => "select",
+"std" => "No",
+"options" => array("No", "Yes")),
+
+array( "name" => "Your Title Header",
+"desc" => "You can customize Title Header on top header area her.",
+"id" => $shortname."_title_header_text",
+"type" => "text",
+"std" => "HMI Cabang Anda",
+),
+
+array(	"name" => "Big Logo",
+"desc" => "Use Custom Big Logo Must <b>(Width:221px and Height:336px)</b> On The Below Header?<br /><em>*Disable by default, Choose Yes to enable it.</em>",
+"id" => $shortname."_big_logo_activate",
+"type" => "select",
+"std" => "No",
+"options" => array("No", "Yes")),
+
+array(	"name" => "Big Logo URL",
+"desc" => "Insert The Full URL Location Of Your Big Logo Here <br /><em>*leave blank if not use</em>",
+"id" => $shortname."_big_logo_url",
+"type" => "text",
+"std" => get_bloginfo('template_directory') ."/img/img/logo.svg"
+),
+ 
+array( "name" => "Custom Favicon",
+"desc" => "A favicon is a 16x16 pixel icon that represents your site; paste the URL to a .ico or .png image that you want to use as the image",
+"id" => $shortname."_favicon",
+"type" => "text",
+"std" => get_bloginfo('template_directory') ."/ico/favicon.png"),
+ 
+array( "type" => "close"),
+ 
+/* ---------------------------------------------------------
+Home section
+----------------------------------------------------------- */
+array( "name" => "Homepage",
+"type" => "section"),
+array( "type" => "open"),
+
+array( "name" => "Title Headline",
+"desc" => "You can customize Title Header on top header area her.",
+"id" => $shortname."_title_headline_text",
+"type" => "text",
+"std" => "Berita Terkini",
+),
+
+array( "name" => "Headline Category",
+"desc" => "Choose a category from which featured posts are drawn",
+"id" => $shortname."_headline",
+"type" => "select",
+"options" => $wp_getcat,
+"std" => "Select a category"),
+
+array( "name" => "Right Title Headline",
+"desc" => "You can customize Title Header on top header area her.",
+"id" => $shortname."_title_rightheadline_text",
+"type" => "text",
+"std" => "Pengumuman",
+),
+
+array( "name" => "Right Headline Category",
+"desc" => "Choose a category from which featured posts are drawn",
+"id" => $shortname."_right_headline",
+"type" => "select",
+"options" => $wp_getcat,
+"std" => "Select a category"),
+
+array( "name" => "Title Agenda",
+"desc" => "You can customize Title area her.",
+"id" => $shortname."_agenda_text",
+"type" => "text",
+"std" => "Agenda",
+),
+
+array( "name" => "Agenda Category",
+"desc" => "Choose a category from which featured posts are drawn",
+"id" => $shortname."_agenda",
+"type" => "select",
+"options" => $wp_getcat,
+"std" => "Select a category"),
+
+array( "name" => "Title Suara Kita",
+"desc" => "You can customize Title area her.",
+"id" => $shortname."_suarakita_text",
+"type" => "text",
+"std" => "Suara Kita",
+),
+
+array( "name" => "Suara Kita Category",
+"desc" => "Choose a category from which featured posts are drawn",
+"id" => $shortname."_suara_kita",
+"type" => "select",
+"options" => $wp_getcat,
+"std" => "Select a category"),
+
+array( "name" => "Title Karya Berkarya",
+"desc" => "You can customize Title area her.",
+"id" => $shortname."_karya_text",
+"type" => "text",
+"std" => "Karya dan Berkarya",
+),
+
+array( "name" => "Karya Berkarya Category",
+"desc" => "Choose a category from which featured posts are drawn",
+"id" => $shortname."_karya",
+"type" => "select",
+"options" => $wp_getcat,
+"std" => "Select a category"),
+
+array( "type" => "close"),
+ 
+/* ---------------------------------------------------------
+Footer section
+----------------------------------------------------------- */
+array( "name" => "Footer",
+"type" => "section"),
+array( "type" => "open"),
+
+array(	"name" => "Footer Logo",
+"desc" => "Use Custom Footer Logo  Must <b>(H:80XW:228px)</b> On The Footer?<br /><em>*Disable by default, Choose Yes to enable it.</em>",
+"id" => $shortname."_footer_logo_activate",
+"type" => "select",
+"std" => "No",
+"options" => array("No", "Yes")),
+
+array(	"name" => "Footer Logo URL",
+"desc" => "Insert The Full URL Location Of Your Footer Logo Here <br /><em>*leave blank if not use</em>",
+"id" => $shortname."_footer_logo_url",
+"type" => "text",
+"std" => get_bloginfo('template_directory') ."/img/footer_cabang.png"
+),
+
+array( "name" => "Your Address",
+"desc" => "You can input your address company in her.",
+"id" => $shortname."_alamat_text",
+"type" => "text",
+"std" => "Jl. Peltu Sujono 43 Sukun"),
+
+array( "name" => "Your City",
+"desc" => "You can input your city company in her.",
+"id" => $shortname."_kota_text",
+"type" => "text",
+"std" => "Malang, Jawa Timur"),
+
+array( "name" => "Yout Contact",
+"desc" => "You can input your contact company in her.",
+"id" => $shortname."_kontak_text",
+"type" => "text",
+"std" => "Telp: +62341-700-98-12 | mail: info@gb.co.id"),
+ 
+array( "type" => "close"),
+
+/*---------------------------------------------------------
+Social Media
+---------------------------------------------------------*/
+array( "name" => "Social Media",
+"type" => "section"), 
+array( "type" => "open"),
+	
+array( "name" => "Facebook Page",
+"desc" => "Insert The Full URL Location Of Your Social Account <br /><em>*leave blank if not use</em>",
+"id" => $shortname."_facebook",
+"type" => "text",
+"std" => "http://www.facebook.com/greenboxindonesia"),
+
+array( "name" => "Google Plus",
+"desc" => "Insert The Full URL Location Of Your Social Account <br /><em>*leave blank if not use</em>",
+"id" => $shortname."_googleplus",
+"type" => "text",
+"std" => "https://plus.google.com/110544120666982820356"),
+
+array( "name" => "Twitter",
+"desc" => "Insert The Full URL Location Of Your Social Account <br /><em>*leave blank if not use</em>",
+"id" => $shortname."_twitter",
+"type" => "text",
+"std" => "http://www.twitter.com/greenbox_id"),
+	 
+array( "type" => "close"),
+
+/*---------------------------------------------------------
+Video Youtube
+---------------------------------------------------------*/
+array( "name" => "Video Youtube",
+"type" => "section"), 
+array( "type" => "open"),
+	
+array( "name" => "Title Video",
+"desc" => "You can customize Title of Video.",
+"id" => $shortname."_title_video_text",
+"type" => "text",
+"std" => "Dokumentasi",
+),
+
+array( "name" => "Embed Video Code",
+"desc" => "This code will be show as map picture at homepage. To get the code visit <a href='https://maps.google.com/' target='_blank'>Google Maps</a>",
+"id" => $shortname."_video",
+"type" => "textarea",
+"std" => "<iframe width='560' height='315' src='//www.youtube.com/embed/j8cKdDkkIYY' frameborder='0' allowfullscreen></iframe>"
+),
+	 
+array( "type" => "close"),
+
+/*---------------------------------------------------------
+Google Maps
+---------------------------------------------------------*/
+array( "name" => "Google Maps",
+"type" => "section"), 
+array( "type" => "open"),
+	
+array( "name" => "Title Google Maps",
+"desc" => "You can customize Title on Maps Picture at homepage.",
+"id" => $shortname."_title_maps_text",
+"type" => "text",
+"std" => "Location",
+),
+
+array( "name" => "Google Maps Code",
+"desc" => "This code will be show as map picture at homepage. To get the code visit <a href='https://maps.google.com/' target='_blank'>Google Maps</a>",
+"id" => $shortname."_maps",
+"type" => "textarea",
+"std" => ""
+),
+	 
+array( "type" => "close"),
+
+/*---------------------------------------------------------
+Google Analytics
+---------------------------------------------------------*/
+array( "name" => "Google Analytics",
+"type" => "section"), 
+array( "type" => "open"),
+	
+array( "name" => "Google Analytic Code",
+"desc" => "This code will be added to the footer before the &lt;/body&gt; closing tag. To get the code visi <a href='https://www.google.com/analytics/' target='_blank'>Google Analytics</a>",
+"id" => $shortname."_analytics",
+"type" => "textarea",
+"std" => "<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39293146-1', 'hmi.or.id');
+  ga('send', 'pageview');
+
+</script>"
+),
+	 
+array( "type" => "close"),
+/*---------------------------------------------------------
+Overview Organizations
+---------------------------------------------------------*/
+array( "name" => "Overview Organizations",
+"type" => "section"), 
+array( "type" => "open"),
+	
+array( "name" => "Office Picture",
+"desc" => "Insert The Full URL Location Of Your Office Picture Here size <b>width:370px height:auto</b><br /><em>*leave blank if not use</em>",
+"id" => $shortname."_office_picture_url",
+"type" => "text",
+"std" => get_bloginfo('template_directory') ."/img/office.png"
+),
+
+array( "name" => "Short Description Organization",
+"desc" => "This text will view on sidebar archive pengurus",
+"id" => $shortname."_decription",
+"type" => "textarea",
+"std" => "Tincidunt diam, proin in ac dignissim a lundium dignissim ultricies lorem elit amet mauris, pellentesque augue urna nunc diam nec pellentesque nunc habitasse, nec nec lacus, dapibus lundium augue sed platea cras, sed, parturient pid natoque, natoque ultricies nec enim tortor tempor, pulvinar magna, dapibus adipiscing, adipiscing"
+),
+	 
+array( "type" => "close"),
+
+);
+
+/*-------------------------------------------------------
+Added custom link social network for author in backend
+---------------------------------------------------------*/
+function my_new_contactmethods( $contactmethods ) {
+// Add Twitter
+$contactmethods['twitter'] = 'Twitter';
+//add Facebook
+$contactmethods['facebook'] = 'Facebook';
+//Add Google Plus
+$contactmethods['googleplus'] = 'Google Plus';
+
+return $contactmethods;
+}
+add_filter('user_contactmethods','my_new_contactmethods',10,1);
+// end off top scripth
+
+/*---------------------------------------------------
+Theme Panel Output
+----------------------------------------------------*/
+function theme_settings_page() {
+    global $themename,$theme_options;
+    $i=0;
+    $message=''; 
+    if ( 'save' == $_REQUEST['action'] ) {
+      
+        foreach ($theme_options as $value) {
+            update_option( $value['id'], $_REQUEST[ $value['id'] ] ); }
+      
+        foreach ($theme_options as $value) {
+            if( isset( $_REQUEST[ $value['id'] ] ) ) { update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); } else { delete_option( $value['id'] ); } }
+        $message='saved';
+    }
+    else if( 'reset' == $_REQUEST['action'] ) {
+          
+        foreach ($theme_options as $value) {
+            delete_option( $value['id'] ); }
+        $message='reset';        
+    }
+  
+    ?>
+    <div class="wrap options_wrap">
+        <div id="icon-options-general"></div>
+        <h2><?php _e( ' Greenhouse Themes Panel HMI Beta I' ) //your admin panel title ?></h2>
+        <?php
+        if ( $message=='saved' ) echo '<div class="updated settings-error" id="setting-error-settings_updated"> 
+        <p>'.$themename.' settings saved.</strong></p></div>';
+        if ( $message=='reset' ) echo '<div class="updated settings-error" id="setting-error-settings_updated"> 
+        <p>'.$themename.' settings reset.</strong></p></div>';
+        ?>
+        <ul>
+            <li>View Documentation |</li>
+            <li>Visit Support |</li>
+            <li>Theme version 1.0 </li>
+        </ul>
+        <div class="content_options">
+            <form method="post">
+  
+            <?php foreach ($theme_options as $value) {
+          
+                switch ( $value['type'] ) {
+              
+                    case "open": ?>
+                    <?php break;
+                  
+                    case "close": ?>
+                    </div>
+                    </div><br />
+                    <?php break;
+                  
+                    case "title": ?>
+                    <div class="message">
+                        <p>To easily use the <?php echo $themename;?> theme options, you can use the options below.</p>
+                    </div>
+                    <?php break;
+                  
+                    case 'text': ?>
+                    <div class="option_input option_text">
+                    <label for="<?php echo $value['id']; ?>">
+                    <?php echo $value['name']; ?></label>
+                    <input id="" type="<?php echo $value['type']; ?>" name="<?php echo $value['id']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'])  ); } else { echo $value['std']; } ?>" />
+                    <small><?php echo $value['desc']; ?></small>
+                    <div class="clearfix"></div>
+                    </div>
+                    <?php break;
+                  
+                    case 'textarea': ?>
+                    <div class="option_input option_textarea">
+                    <label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+                    <textarea name="<?php echo $value['id']; ?>" rows="" cols=""><?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id']) ); } else { echo $value['std']; } ?></textarea>
+                    <small><?php echo $value['desc']; ?></small>
+                    <div class="clearfix"></div>
+                    </div>
+                    <?php break;
+                  
+                    case 'select': ?>
+                    <div class="option_input option_select">
+                    <label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+                    <select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
+                    <?php foreach ($value['options'] as $option) { ?>
+                            <option <?php if (get_settings( $value['id'] ) == $option) { echo 'selected="selected"'; } ?>><?php echo $option; ?></option>
+                    <?php } ?>
+                    </select>
+                    <small><?php echo $value['desc']; ?></small>
+                    <div class="clearfix"></div>
+                    </div>
+                    <?php break;
+                  
+                    case "checkbox": ?>
+                    <div class="option_input option_checkbox">
+                    <label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+                    <?php if(get_option($value['id'])){ $checked = "checked=\"checked\""; }else{ $checked = "";} ?>
+                    <input id="<?php echo $value['id']; ?>" type="checkbox" name="<?php echo $value['id']; ?>" value="true" <?php echo $checked; ?> /> 
+                    <small><?php echo $value['desc']; ?></small>
+                    <div class="clearfix"></div>
+                    </div>
+                    <?php break;
+                  
+                    case "section": 
+                    $i++; ?>
+                    <div class="input_section">
+                    <div class="input_title">
+                         
+                        <h3><img src="<?php echo get_template_directory_uri();?>/img/setting.png" alt="">&nbsp;<?php echo $value['name']; ?></h3>
+                        <span class="submit"><input name="save<?php echo $i; ?>" type="submit" class="button-primary" value="Save changes" /></span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="all_options">
+                    <?php break;
+                     
+                }
+            }?>
+          <input type="hidden" name="action" value="save" />
+          </form>
+          <form method="post">
+              <p class="submit">
+              <input name="reset" type="submit" value="Reset" />
+              <input type="hidden" name="action" value="reset" />
+              </p>
+          </form>
+        </div>
+        <div class="footer-credit">
+            <p>© Create by <a title="Greenhouse Project" href="http://www.greenboxindonesia.com" target="_blank" >Greenboxindonesia</a> |  News & Update Development on <a title="Greenhouse Project" href="http://status.hmi.web.id" target="_blank" >Official Blog Development HMI</a></p>
+        </div>
+    </div>
+    <?php
+}
+?>
