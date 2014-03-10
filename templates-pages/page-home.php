@@ -146,7 +146,7 @@
 				<?php // Blog post query
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 				$category_id = (get_option('greenhouse_right_headline'));//note: bila tidak muncul slug dan title category tidak sama
-				query_posts(array('post_type' => 'post', 'paged' => $paged, 'showposts' => 6, 'category_name' => $category_id ));
+				query_posts(array('post_type' => 'post', 'paged' => $paged, 'showposts' => 5, 'category_name' => $category_id ));
 				if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<div class="span-right-news">
 					<div <?php post_class(); ?>>
