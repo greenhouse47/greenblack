@@ -11,7 +11,7 @@ Follow the development: [WIP Branch on Github](https://github.com/greenhouse47/g
 
 Demo
 ----
-You can view a demo of this WordPress theme running the latest development branch code at: [http://www.cabang.hmi.or.id/](http://www.cabang.hmi.or.id/)
+You can view a demo of this WordPress theme running the latest development branch code at: <a href="http://www.cabang.hmi.or.id" target="_blank">http://www.cabang.hmi.or.id/</a>
 
 
 Usage
@@ -62,6 +62,16 @@ Please report all issues on the repo's Issue Tracker. Remember to provide as muc
 3.  Improved file organization with assets and template folders
 4.  Merged internationalization/translation contributions from [santiagogil](https://github.com/santiagogil) and [zedejose](https://github.com/zedejose)
 
+__Boxfunctions Folder__
+
+* Add New panel for themes form management data
+* Setting data profile company, organizations, community data
+* Management social link (facebook, twitter, google plus)
+* Setting Custom Code analityc Google
+* Add Video from youtube and Google Maps
+* Management view content post on category
+* Management icon and logo
+
 __Assets Folder__
 
 * Now contains the following folders: css, js, img, fonts and ico
@@ -76,8 +86,9 @@ __Templates-Documentation Folder__
 __Templates-Pages Folder__
 
 * Holds theme's page templates
-* Changed layout on `page-home.php` to match hero template
+* Changed layout on `page-home.php` to match homepage template
 * Removed "jumbotron" class from h1 title on `page-blog.php` template
+* Other template: `page-contact.php`, `page-full-width.php`, `page-login.php`, `page-profile.php`, `page-register.php`,`page-reset-password.php`
 
 __404.php__
 
@@ -116,9 +127,33 @@ __Page.php__
 
 *   Removed '<header>' element wrapping around page title.
 
+__Sidebar-author.php__
+
+*   Template layout sidebar for author page.
+
+__Sidebar-blog.php__
+
+*   Template layout sidebar for Blog page.
+
+__Sidebar-office.php__
+
+*   Template layout sidebar for Office page.
+
+__Sidebar-staff.php__
+
+*   Template layout sidebar for staff page.
+
 __Page-blog.php__
 
-* Replaced conditional for `the_post_thumbnail()` with `bootstrapwp_autoset_featured_img()`.
+*   Replaced conditional for `the_post_thumbnail()` with `bootstrapwp_autoset_featured_img()`.
+
+__Ico Folder__
+
+*   Social media ico (twitter, facebook, google plus) and favicon ico.
+
+__Fonts Folder__
+
+*   Default font style with `antic_slab` font type.
 
 __Docs Folder__
 
@@ -148,9 +183,25 @@ This program is free software: you can redistribute it and/or modify
 Thanks to the Original Twitter Bootstrap Authors
 -----------------------
 
+**Mark Otto**
+
++ http://twitter.com/mdo
++ http://github.com/markdotto
+
+**Jacob Thornton**
+
++ http://twitter.com/fat
++ http://github.com/fat
+
+
+Follow Development on Our Social Network
+-----------------------
+
 **Greenbox.id**
 
 + http://twitter.com/greenbox_id
++ http://facebook.com/greenboxindonesia
++ https://plus.google.com/111782221901979802722
 + https://github.com/greenboxindonesia
 
 **Development Tim - Greenhouse47**
