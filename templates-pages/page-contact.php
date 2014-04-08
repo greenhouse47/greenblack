@@ -11,24 +11,24 @@
 <?php
 if(isset($_POST['submitted'])) {
 	if(trim($_POST['contactName']) === '') {
-		$nameError = 'Please enter your name.';
+		$nameError = 'Mohon masukkan Nama Anda.';
 		$hasError = true;
 	} else {
 		$name = trim($_POST['contactName']);
 	}
 
 	if(trim($_POST['email']) === '')  {
-		$emailError = 'Please enter your email address.';
+		$emailError = 'Mohon masuukan Email Anda.';
 		$hasError = true;
 	} else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['email']))) {
-		$emailError = 'You entered an invalid email address.';
+		$emailError = 'Alamat Email Anda tidak valid';
 		$hasError = true;
 	} else {
 		$email = trim($_POST['email']);
 	}
 
 	if(trim($_POST['comments']) === '') {
-		$commentError = 'Please enter a message.';
+		$commentError = 'Mohon Isi Pesan Anda.';
 		$hasError = true;
 	} else {
 		if(function_exists('stripslashes')) {
@@ -64,35 +64,35 @@ if(isset($_POST['submitted'])) {
    	 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<div class="container">
 		<div class="contact-page-header">
-			<h3 style="color:white;"><?php the_title();?></h3>
+			<h3 style="color:white;"><i class="fa fa-envelope-o"></i> <?php the_title();?></h3>
 			<?php if(isset($emailSent) && $emailSent == true) { ?>
 					<div class="thanks">
-						<p style="color:white;">Thanks, your email was sent successfully.</p>
+						<p style="color:white;">Terimakasih, email Anda terkirim dengan sukses.</p>
 					</div>
 				<?php } else { ?>
 					<?php the_content(); ?>
 					<?php if(isset($hasError) || isset($captchaError)) { ?>
-						<p class="error">Sorry, an error occured.<p>
+						<p class="error">Maaf, terjadi kesalahan.<p>
 					<?php } ?>
 
 				<form action="<?php the_permalink(); ?>" id="contactForm" method="post">
 					<fieldset>
-						<input type="text" placeholder="Your Name" name="contactName" id="contactName" value="<?php if(isset($_POST['contactName'])) echo $_POST['contactName'];?>" class="required requiredField" />
+						<input type="text" placeholder="Nama Anda" name="contactName" id="contactName" value="<?php if(isset($_POST['contactName'])) echo $_POST['contactName'];?>" class="required requiredField" />
 						<?php if($nameError != '') { ?>
 							<span class="error"><?=$nameError;?></span>
 						<?php } ?>
-						<input type="text" placeholder="Your Email" name="email" id="email" value="<?php if(isset($_POST['email']))  echo $_POST['email'];?>" class="required requiredField email" />
+						<input type="text" placeholder="Email Anda" name="email" id="email" value="<?php if(isset($_POST['email']))  echo $_POST['email'];?>" class="required requiredField email" />
 						<?php if($emailError != '') { ?>
 							<span class="error"><?=$emailError;?></span>
 						<?php } ?>
 						
-						<label for="commentsText" style="color:white;">Message:</label>
+						<label for="commentsText" style="color:white;"><i class="fa fa-pencil-square-o"></i> Isi Pesan:</label>
 						<textarea name="comments" id="commentsText" rows="20" cols="30" class="required requiredField"><?php if(isset($_POST['comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['comments']); } else { echo $_POST['comments']; } } ?></textarea>
 						<?php if($commentError != '') { ?>
 							<span class="error"><?=$commentError;?></span>
 						<?php } ?>
 						<br/>
-						<button type="submit" class="btn">Send message</button>
+						<button type="submit" class="btn"><i class="fa fa-sign-in"></i> Kirim Pesan</button>
 								
 					</fieldset>
 					<input type="hidden" name="submitted" id="submitted" value="true" />

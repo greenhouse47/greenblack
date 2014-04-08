@@ -1,8 +1,8 @@
 <?php
 /**
  * Name: Panel Profile
- * GitHub URI: https://github.com/greenhouse47
- * Description: Panel Profile User
+ * GitHub URI: https://github.com/greenboxindonesia
+ * Description: Panel Framework
  * Author: Albert Sukmono
  * Twitter: @greenbox_id
  * Author website: http://www.greenboxindonesia.com
@@ -70,7 +70,7 @@ array(	"name" => "Header Logo URL",
 "desc" => "Insert The Full URL Location Of Your Header Logo Here <br /><em>*leave blank if not use</em>",
 "id" => $shortname."_header_logo_url",
 "type" => "text",
-"std" => get_bloginfo('template_directory') ."/img/logo_small_header_hmi.png"
+"std" => get_bloginfo('template_directory') ."/img/logo_small_header.png"
 ),
 
 array(	"name" => "Title Header",
@@ -84,7 +84,7 @@ array( "name" => "Your Title Header",
 "desc" => "You can customize Title Header on top header area her.",
 "id" => $shortname."_title_header_text",
 "type" => "text",
-"std" => "HMI Cabang Anda",
+"std" => "Welcome",
 ),
 
 array(	"name" => "Big Logo",
@@ -206,14 +206,14 @@ array(	"name" => "Footer Logo URL",
 "desc" => "Insert The Full URL Location Of Your Footer Logo Here <br /><em>*leave blank if not use</em>",
 "id" => $shortname."_footer_logo_url",
 "type" => "text",
-"std" => get_bloginfo('template_directory') ."/img/footer_cabang.png"
+"std" => get_bloginfo('template_directory') ."/img/footer_maskot_gb.png"
 ),
 
 array( "name" => "Your Address",
 "desc" => "You can input your address company in her.",
 "id" => $shortname."_alamat_text",
 "type" => "text",
-"std" => "Jl. Peltu Sujono 43 Sukun"),
+"std" => "Jl. Peltu Sujono 43"),
 
 array( "name" => "Your City",
 "desc" => "You can input your city company in her.",
@@ -319,7 +319,7 @@ array( "name" => "Google Analytic Code",
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-39293146-1', 'hmi.or.id');
+  ga('create', 'UA-45610612-5', 'greenbox.web.id');
   ga('send', 'pageview');
 
 </script>"
@@ -393,7 +393,7 @@ function theme_settings_page() {
     ?>
     <div class="wrap options_wrap">
         <div id="icon-options-general"></div>
-        <h2><?php _e( ' Greenhouse Themes Panel HMI Beta I' ) //your admin panel title ?></h2>
+        <h2><?php _e( ' Framework Panel Greenhouse ' ) //your admin panel title ?></h2>
         <?php
         if ( $message=='saved' ) echo '<div class="updated settings-error" id="setting-error-settings_updated"> 
         <p>'.$themename.' settings saved.</strong></p></div>';
@@ -492,7 +492,7 @@ function theme_settings_page() {
           </form>
         </div>
         <div class="footer-credit">
-            <p>© Create by <a title="Greenhouse Project" href="http://www.greenboxindonesia.com" target="_blank" >Greenboxindonesia</a> |  News & Update Development on <a title="Greenhouse Project" href="http://status.hmi.web.id" target="_blank" >Official Blog Development HMI</a></p>
+            <p>© Create by <a title="Greenhouse Project" href="http://www.greenboxindonesia.com" target="_blank" >Greenboxindonesia</a> |  News & Update Development on <a title="Greenhouse Project" href="http://news.greenbox.web.id" target="_blank" >Our Blog</a></p>
         </div>
     </div>
     <?php

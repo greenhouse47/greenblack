@@ -22,7 +22,7 @@ get_header(); ?>
 				<div class="image-post-single"><?php the_post_thumbnail('full', array('class' => 'profile')); ?></div>
 			</div>
             <div class="isi-profile">
-				<div class="deskripsi-profile"><?php the_title();?></div>
+				<div class="deskripsi-profile"><i class="fa fa-users"></i> <?php the_title();?></div>
 				<?php the_content(); ?>
 				<?php endwhile; // end of the loop. ?>
 			</div><!-- .span12 -->

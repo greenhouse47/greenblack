@@ -14,12 +14,12 @@
 				<div class="sidebar-archive-pengurus">
 					<p><?php echo get_option('greenhouse_decription'); ?></p>
 					<hr/>
-					<p>Office Address<br/>
+					<p><i class="fa fa-map-marker"></i> Office Address<br/>
 					<?php bloginfo('name'); ?><br/>
 					<?php echo get_option('greenhouse_alamat_text'); ?><br/>
 					<?php echo get_option('greenhouse_kota_text'); ?><br/>
-					<?php echo get_option('greenhouse_kontak_text'); ?></p>
-					<p>List Arsip Staff</p>
+					<i class="fa fa-phone"></i> <?php echo get_option('greenhouse_kontak_text'); ?></p>
+					<p><i class="fa fa-hdd-o"></i> List Arsip Staff</p>
 					<!-- List Arship Category Pengurus -->
 					<?php 
 					//list terms in a given taxonomy using wp_list_categories (also useful as a widget if using a PHP Code plugin)

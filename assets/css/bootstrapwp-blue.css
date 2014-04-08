@@ -229,11 +229,11 @@ body {
   background-color: #ffffff;
 }
 a {
-  color: #088A0D;
+  color: #207BA7;
   text-decoration: none;
 }
 a:hover {
-  color: #0A4E00;
+  color: #004870;
   text-decoration: none;
 }
 .img-rounded {
@@ -6592,10 +6592,10 @@ list-style: none;
 display: inline;
 margin-right: -5px;
 padding: 0px 10px 0;
-border-right: solid 1px #555;
+border-right: solid 1px #40739B;
 }
 .container-secondary {
-background: #ddd;
+background: #D7EEFD;
 text-align: center;
 position: relative;
 margin-bottom: 0;
@@ -6603,12 +6603,12 @@ padding-left: 0;
 padding-right: 0;
 }
 .container-third {
-background: #ddd;
+background: #D7EEFD;
 text-align: center;
 position: relative;
 }
 .container-third-bottom {
-background:#088A0D;
+background:#2494C9;
 position: relative;
 }
 .homepage-logo {
@@ -6665,7 +6665,7 @@ text-align: left;
 float: left;
 }
 .span-right {
-background: #088A0D;
+background: #2494C9;
 color: white;
 width: 310px;
 height: 292px;
@@ -6678,7 +6678,7 @@ padding: 0px 20px 0 20px;
 margin-left: 0px;
 }
 .span4 h3, .span6 h3 {
-color: #07630A;
+color: #207BA7;
 }
 .title-headline h3{
 border-bottom: solid 1px #DBDBDB;
@@ -6805,7 +6805,7 @@ padding: 5px 10px 0 0;
 float:left;
 }
 .title-right-headline h3{
-border-bottom: solid 1px #A0CC9A;
+border-bottom: solid 1px #AEDCFF;
 padding-bottom: 7px;
 margin: auto;
 }
@@ -6852,14 +6852,14 @@ color:#666;
 .timeline-bottom-left {
 width: 72%;
 text-align: right;
-background: #999;
+background: #207BA7;
 float: left;
 padding: 15px;
 }
 .timeline-bottom-right {
 text-align: center;
 padding: 15px;
-background: #666;
+background: #004870;
 color: white;
 margin-left: 30px;
 }
@@ -6934,7 +6934,7 @@ text-align: right;
 color:white;
 }
 .footer-menu-bottom  a:hover{
-color:#999;
+color:#2494C9;
 }
 .footer-custom {
 color: white;
@@ -6952,13 +6952,13 @@ padding: 15px 0 20px 25px;
 margin-bottom: 20px;
 }
 .container-fort {
-background: #272727;
+background: #004870;
 }
 .footer-social-media {
 margin-top:-20px;
 }
 .footer-menu-policy {
-border-bottom: solid 1px #464646;
+border-bottom: solid 1px #40739B;
 margin-bottom: 20px;
 }
 .copyright-greenboxindonesia {

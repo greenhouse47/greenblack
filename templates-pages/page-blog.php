@@ -20,7 +20,7 @@ get_header(); ?>
         <div class="span8">
             <?php while (have_posts()) : the_post(); ?>
                 <header class="page-title">
-                    <h1><?php the_title();?></h1>
+                    <h2><i class="fa fa-hdd-o"></i> <?php the_title();?></h2>
                 </header>
 
                 <?php the_content(); ?>
@@ -37,7 +37,7 @@ get_header(); ?>
 
                 <div <?php post_class(); ?>>
                     <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
-                        <h3><?php the_title();?></h3>
+                        <h3><i class="fa fa-pencil"></i> <?php the_title();?></h3>
                     </a>
                     <p class="meta">
                         <?php echo bootstrapwp_posted_on();?>
