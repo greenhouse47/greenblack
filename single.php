@@ -19,7 +19,7 @@ get_header(); ?>
     </div><!--/.row -->
 
     <header class="post-title">
-        <h2><i class="fa fa-pencil"></i> <?php the_title();?></h2>
+        <h2><?php the_title();?></h2>
     </header>
 
     <div class="row content">
@@ -59,11 +59,11 @@ get_header(); ?>
 			<?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
 			<div class="deskripsi-author"><?php the_author_meta('description'); ?></div>
 			<hr/>
-			<p><i class="fa fa-globe"></i> Website : <a href="<?php echo get_the_author_meta('user_url'); ?>" target="_blank"><?php the_author_meta('user_url'); ?></a></p>
-			<p><i class="fa fa-retweet"></i> Ikuti Saya di jaringan sosial :
-				<a href="<?php echo $curauth->facebook; ?>" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Facebook</a>&nbsp;&nbsp;
-				<a href="<?php echo $curauth->twitter; ?>" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Twitter</a>&nbsp;&nbsp;
-				<a href="<?php echo $curauth->googleplus; ?>" target="_blank"><i class="fa fa-google-plus"></i>&nbsp;Google Plus</a>&nbsp;&nbsp;
+			<p>Website : <a href="<?php echo get_the_author_meta('user_url'); ?>" target="_blank"><?php the_author_meta('user_url'); ?></a></p>
+			<p>Connect with <?php the_author_meta('display_name'); ?> :
+				<a href="<?php echo $curauth->facebook; ?>" target="_blank"><img src="<?php echo get_template_directory_uri();?>/ico/facebook.png"/>Facebook</a>
+				<a href="<?php echo $curauth->twitter; ?>" target="_blank"><img src="<?php echo get_template_directory_uri();?>/ico/twitter.png"/>Twitter</a>
+				<a href="<?php echo $curauth->googleplus; ?>" target="_blank"><img src="<?php echo get_template_directory_uri();?>/ico/googleplus.png"/>Google Plus</a>
 			</p>
 			</div>
 			<hr/>
@@ -83,7 +83,7 @@ get_header(); ?>
 			);
 			$my_query = new wp_query( $args );
 			if( $my_query->have_posts() ) {
-			echo '<div id="related_posts" class="clear"><h3><i class="fa fa-link"></i> Tulisan Terkait</h3><ul>';
+			echo '<div id="related_posts" class="clear"><h3>Tulisan Terkait</h3><ul>';
 			while( $my_query->have_posts() ) {
 			$my_query->the_post(); ?>
 			<li>

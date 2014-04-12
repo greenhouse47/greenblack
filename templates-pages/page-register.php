@@ -47,21 +47,14 @@ if (!$user_ID) {
 
 	<h1><?php the_title(); ?></h1>
 	<div id="result"></div> <!-- To hold validation results -->
-	<form method="post" action="verify.php">
+	<form action="" method="post">
 		<label>Username</label>
-		<input type="text" placeholder="Masukkan Username Anda" name="username" class="text" value="" /><br/>
-		<label>Email</label>
-		<input type="text" placeholder="Masukkan Email Anda" name="email" class="text" value="" /><br/>
-<!-- Add recaptcha library -->
-        <?php
-		  require_once( trailingslashit( get_template_directory() ) . 'recaptcha/recaptchalib.php'); // themes panel greenhouse
-          //require_once('recaptchalib.php');
-          $publickey = "6Ld2LsUSAAAAAIMgMs6eyPxvQx8t-iEhAMym7x68"; // you got this from the signup page
-          echo recaptcha_get_html($publickey);
-        ?>
-		<br/>
-		<button type="submit" class="btn">Mendaftar</button>
+		<input type="text" placeholder="Username" name="username" class="text" value="" /><br/>
+		<label>Your Email</label>
+		<input type="text" placeholder="Your Email" name="email" class="text" value="" /><br/>
+		<button type="submit" class="btn">Signup</button>
 	</form>
+
 	<script type="text/javascript">
 		//<![CDATA[
 		$("#submitbtn").click(function() {

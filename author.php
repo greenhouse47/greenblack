@@ -19,12 +19,13 @@ get_header(); ?>
             } ?>
             </div>
         </div><!--/.row -->
+
 		<div class="row content">
 			<div class="span8">
                 <header class="subhead" id="overview">
 					<div class="author-articles">
-						<div class="arship-articles-author">
-						<i class="fa fa-folder-open-o"></i> <?php the_author_meta('display_name'); ?> Articles
+						<div class="arship-articles-author"><img src="<?php echo get_template_directory_uri();?>/img/arship-author.svg"/>
+						<?php the_author_meta('display_name'); ?> Articles <?php echo count_user_posts(); ?>
 						</div>
 					</div>
                 </header>
@@ -32,6 +33,7 @@ get_header(); ?>
                 // Rewind the loop back
                     rewind_posts();
                 ?>
+
                 <?php while (have_posts()) : the_post(); ?>
                     <div <?php post_class(); ?>>
                         <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
@@ -57,11 +59,15 @@ get_header(); ?>
                                     <?php echo get_excerpt(555); ?>
                                 </div>
                         </div><!-- /.row -->
+
                         <hr/>
                     </div><!-- /.post_class -->
                    <?php endwhile; ?>
+
                    <?php bootstrapwp_content_nav('nav-below');?>
+
                <?php endif; ?>
 		</div>
+
     <?php get_sidebar('author'); ?>
     <?php get_footer(); ?>

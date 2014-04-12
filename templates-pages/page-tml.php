@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page - Profile
+ * Template Name: Page - TML
  * Description: Displays a page title and content without displaying a sidebar.
  *
  * @package WordPress
@@ -18,14 +18,10 @@ get_header(); ?>
             </div><!--/.span12 -->
         </div><!--/.row -->
         <div class="row content">
-			<div class="pic-profile">
-				<div class="image-post-single"><?php the_post_thumbnail('full', array('class' => 'profile')); ?></div>
-			</div>
-            <div class="isi-profile">
-				<div class="deskripsi-profile"><?php the_title();?></div>
-				<?php the_content(); ?>
-				<?php endwhile; // end of the loop. ?>
-			</div><!-- .span12 -->
+            <?php the_content(); ?>
+            <?php endwhile; // end of the loop. ?>
+
         </div><!-- .row content -->
     </div><!--/.container -->
+
 <?php get_footer(); ?>

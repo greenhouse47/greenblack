@@ -165,6 +165,23 @@ __IMG Folder__
 *   Removed sub-folder 'examples' to clean up theme files.
 *   Updated with new images and icons from Bootstrap 2.1
 
+##v.1.2.0 of Greenblack ##
+* Penambahan template untuk theme my login - plugin TML for wordpress is required
+* Penambahan panel admin themes - Green Panel - boxfunctions folder
+* Editing assets/css/bootstrapwp.css
+* Editing functions required load file panel on boxfunctions folder
+* Penambahan library font sendiri - folder Fonts (anti_slab)
+* Deleted Folder Library Recaptcha Google
+* Editing custom Template statis pada folder template documentations
+* Tambangan load font-awesome.css untuk fungsi icon
+* Pemindahan lokasi layout logo pada header ke kanan
+* Penambahan template author.php, sidebar-author.php, sidebar-blog.php, sidebar-office.php, sidebar-staff.php, 404.php, archive.php
+* Penambahan template mengambil dari theme-my-login: login-form.php, loginpassword-form.php, register-form.php, resetpass-form.php
+
+
+Changelog
+---------------------
+Setiap perubahan bisa dilihat pada file change-log.txt
 
 
 Copyright and license

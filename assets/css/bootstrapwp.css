@@ -6612,11 +6612,11 @@ background:#088A0D;
 position: relative;
 }
 .homepage-logo {
-width: 32%;
+width: 19%;
 height: auto;
-padding: 15px 0 15px 15px;
+padding: 45px 0 15px 15px;
 margin: auto;
-float: right;
+float: left;
 }
 .contact-page-header{
 height: auto;
@@ -6636,7 +6636,7 @@ width: 100%;
 width: auto;
 padding: 25px;
 margin: auto;
-text-align: left;
+text-align: right;
 height: auto;
 text-shadow: 1px 1px rgba(0,0,0,.3);
 color:#fff;
@@ -6894,8 +6894,8 @@ border-bottom: solid 2px #B9B9B9;
 .author-articles {
 color: #1b7cbd;
 font-size: 27px;
-background: #C5DCFF;
-padding: 10px 15px 9px;
+background: #eee;
+padding: 5px 0 0px 12px;
 border-radius: 5px;
 }
 .arship-articles-author img {
@@ -6970,18 +6970,179 @@ font-size: 11px;
 font-size:13px;
 line-height:20px;
 }
-li.user-avatar-logged img {
-border-radius: 25px;
+/*==layout TML ===*/
+ul.tml-action-links {
+list-style: none;
+display: inline;
+margin: auto;
 }
-.image-avatar-last-update {
-float: left;
-padding: 0 10px 15px 0;
+.login {
+	padding: 5px;
 }
-.image-avatar-last-update img {
-border-radius: 32px;
+
+.login p.error {
+	padding: 5px;
+	border: 1px solid #c00;
+	background-color: #ffebe8;
+	color: #333;
 }
-.image-avatar-last-update-expert {
-padding-left: 70px;
+
+.login p.message {
+	padding: 5px;
+	border: 1px solid #e6db55;
+	background-color: #ffffe0;
+	color: #333;
+}
+
+.login form label {
+	display: block;
+}
+
+.login form p {
+	margin-bottom: 5px;
+}
+
+.login form p.forgetmenot label {
+	display: inline;
+}
+
+.login form p label {
+	display: inline-block;
+	float: left;
+	clear: left;
+	width: auto;
+	text-align: right;
+	margin-top: 10px;
+	width: 90px;
+	text-align: left;
+}
+
+.login input {
+	margin: 5px 0;
+}
+
+.login form p.forgetmenot {
+	margin-top: -10px;
+	margin-bottom: 2px;
+}
+
+.login form p.forgetmenot label {
+	float: none;
+	position: relative;
+	top: 2px;
+	font-size: .85em;
+}
+
+.login form input#rememberme {
+	font-size: .3em;
+}
+
+.login form p.submit {
+	margin-top: 10px;
+	margin-right: 25px;
+}
+
+.profile .screen-reader-text,
+.profile .screen-reader-text span {
+	height: 1px;
+	left: -1000em;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+}
+
+.mu_register .hint {
+	font-size: 12px;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.mu_register label.checkbox {
+	display: inline;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.action a, action a:hover, action a:active {
+	font-size: .9em;
+	color: #06C !important;
+}
+
+.oroption {
+	position: relative;
+	top: 5px;
+	left: 20px;
+}
+
+#pass-strength-result {
+    border-style: solid;
+    border-width: 1px;
+    margin: 12px 5px 5px 1px;
+    padding: 3px 5px;
+    text-align: center;
+    width: 200px;
+}
+
+#pass-strength-result.strong,
+#pass-strength-result.short {
+    font-weight: bold;
+}
+
+#pass-strength-result {
+    background-color: #eee;
+    border-color: #ddd !important;
+}
+
+#pass-strength-result.bad {
+    background-color: #ffb78c;
+    border-color: #ff853c !important;
+}
+
+#pass-strength-result.good {
+    background-color: #ffec8b;
+    border-color: #fc0 !important;
+}
+
+#pass-strength-result.short {
+    background-color: #ffa0a0;
+    border-color: #f04040 !important;
+}
+
+#pass-strength-result.strong {
+    background-color: #c3ff88;
+    border-color: #8dff1c !important;
+}
+
+div.tml-action-links {
+	text-align: left;
+	margin-top: 15px;
+}
+
+div.tml-action-links .seperator {
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+div#page .container h1 {
+	text-align: center;
+}
+
+div#theme-my-login {
+-moz-box-shadow: 0 0 10px #FFF;
+-webkit-box-shadow: 0 0 10px #FFF;
+box-shadow: 0 0 10px #FFF;
+border: 1px solid #E4E4E4;
+padding: 0 35px 10px;
+margin-left: 30px;
+margin-bottom: 25px;
+background-color: #F2FBFF;
+color: #494949;
+}
+
+form#loginform p:first-of-type {
+	margin-top: 20px;
 }
 /* Layaout For Mobile Customize by Albert*/
 @media  (min-width : 320px) and (max-width : 480px) {

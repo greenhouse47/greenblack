@@ -49,7 +49,7 @@ get_header(); ?>
                             }
                         } elseif (is_category()) {
                             printf(
-                                __('<i class="fa fa-hdd-o"></i> Arsip Kategori: %s', 'bootstrapwp'),
+                                __('Category Archives: %s', 'bootstrapwp'),
                                 '<span>' . single_cat_title('', false) . '</span>'
                             );
                             // Show an optional category description
@@ -72,7 +72,7 @@ get_header(); ?>
 
                 <?php while (have_posts()) : the_post(); ?>
                     <div <?php post_class(); ?>>
-                        <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><i class="fa fa-pencil"></i> <?php the_title();?></h3></a>
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
 
                         <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
 

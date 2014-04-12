@@ -181,12 +181,12 @@ if (!function_exists('bootstrapwp_content_nav')):
         if ($wp_query->max_num_pages > 1) : ?>
 
         <nav id="<?php echo $nav_id; ?>" class="navigation" role="navigation">
-            <h4 class="assistive-text"><i class="fa fa-sort"></i> <?php _e('Pembatas Tampilan Post', 'bootstrapwp'); ?></h4>
+            <h4 class="assistive-text"><?php _e('Post navigation', 'bootstrapwp'); ?></h4>
             <div class="nav-previous alignleft"><?php next_posts_link(
-                __('<i class="fa fa-hand-o-right"></i> Berikutnya <span class="meta-nav">&rarr;</span>', 'bootstrapwp')
+                __('Older posts <span class="meta-nav">&rarr;</span>', 'bootstrapwp')
             ); ?></div>
-            <div class="nav-next alignright"> <?php previous_posts_link(
-                __('<span class="meta-nav">&larr;</span> Kembali <i class="fa fa-hand-o-left"></i>', 'bootstrapwp')
+            <div class="nav-next alignright"><?php previous_posts_link(
+                __('<span class="meta-nav">&larr;</span> Newer posts ', 'bootstrapwp')
             ); ?></div>
         </nav><!-- #<?php echo $nav_id; ?> .navigation -->
 
@@ -276,7 +276,7 @@ endif;
 if (!function_exists('bootstrapwp_posted_on')) :
     function bootstrapwp_posted_on()
     {
-        printf(__('Diterbitkan pada <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate><i class="fa fa-calendar"></i> %4$s</time></a><span class="byline"> <span class="sep"> oleh </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author"><i class="fa fa-user"></i> %7$s</a></span></span>','bootstrapwp'),
+        printf(__('Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>','bootstrapwp'),
             esc_url(get_permalink()),
             esc_attr(get_the_time()),
             esc_attr(get_the_date('c')),
@@ -389,7 +389,7 @@ add_filter('wp_title', 'bootstrapwp_wp_title', 10, 2);
  */
 function bootstrapwp_breadcrumbs()
 {
-    $home      = '<i class="fa fa-home"></i>'; // text for the 'Home' link
+    $home      = 'Home'; // text for the 'Home' link
     $before    = '<li class="active">'; // tag before the current crumb
     $after     = '</li>'; // tag after the current crumb
 
@@ -409,7 +409,7 @@ function bootstrapwp_breadcrumbs()
                 if ($thisCat->parent != 0) {
                     echo get_category_parents($parentCat, true, $sep);
                 }
-                echo $before . 'Arsip untuk Kategori "' . single_cat_title('', false) . '"' . $after;
+                echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
             } elseif (is_day()) {
                 echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time(
                     'Y'
@@ -474,7 +474,7 @@ function bootstrapwp_breadcrumbs()
             } elseif (is_author()) {
                 global $author;
                 $userdata = get_userdata($author);
-                echo $before . 'Semua posting dari ' . $userdata->display_name . $after;
+                echo $before . 'Articles posted by ' . $userdata->display_name . $after;
             } elseif (is_404()) {
                 echo $before . 'Error 404' . $after;
             }
@@ -594,45 +594,5 @@ function insert_fb_in_head() {
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
 
 //end of add open graph facebook.
-
-/*
- * Functions for to redirect page template login
- *
- */
-function redirect_login_page() {
-	$login_page  = home_url( '/masuk/' );
-	$page_viewed = basename($_SERVER['REQUEST_URI']);
-
-	if( $page_viewed == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {
-		wp_redirect($login_page);
-		exit;
-	}
-}
-add_action('init','redirect_login_page');
-
-function login_failed() {
-	$login_page  = home_url( '/masuk/' );
-	wp_redirect( $login_page . '?login=failed' );
-	exit;
-}
-add_action( 'wp_login_failed', 'login_failed' );
-
-function verify_username_password( $user, $username, $password ) {
-	$login_page  = home_url( '/masuk/' );
-    if( $username == "" || $password == "" ) {
-        wp_redirect( $login_page . "?login=empty" );
-        exit;
-    }
-}
-add_filter( 'authenticate', 'verify_username_password', 1, 3);
-
-function logout_page() {
-	$login_page  = home_url( '/masuk/' );
-	wp_redirect( $login_page . "?login=false" );
-	exit;
-}
-add_action('wp_logout','logout_page');
-
-// end of
 
 ?>
