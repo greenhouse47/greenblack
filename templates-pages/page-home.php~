@@ -73,11 +73,19 @@
         </div>
     </div>
 <!-- End Header. Begin Template Content -->
+<div class="homepage-logo">
+			<?php $greenhouse_big_logo_activate = get_option('greenhouse_big_logo_activate'); if(($greenhouse_big_logo_activate == '') || ($greenhouse_big_logo_activate == 'No')) { ?>
+			<div><a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('name'); ?>"><img itemprop="logo" src="<?php echo get_template_directory_uri();?>/img/logo.svg" style="height:auto;width:109px;float:left;"></a></div>
+			<?php } else { ?>
+			<div><a href="<?php echo get_settings('home'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('greenhouse_big_logo_url'); ?>" alt="<?php bloginfo('name'); ?>" /></a></div>
+			<?php } ?>
+aku
+</div><!--/.homepage-logo -->
 <div class="container-homepage">
-	<!-- Revolution Slider shortcode -->
-	<?php putRevSlider("rev_slider_home_standard","homepage") ?> 
+	<!-- Background on Top Header Homepage -->
    	 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<div class="container">
+		<?php putRevSlider("rev_slider_home_standard","homepage") ?> 
 		<div class="header-title-homepage">
 			<?php the_content(); ?>
 		</div><!--/.header-title-homepage -->

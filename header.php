@@ -24,8 +24,9 @@
   	content="Himpunan Mahasiswa Islam (Islamic Association Of University Students) Organisasi Mahasiswa yang di dirikan oleh Prof. Dr. H. Lafran Pane beserta 14 kawannya, pertama kali di bentuk di STI Jogjakarta tanggal 05 Februari 1947 dan sekarang sudah tersebar di seluruh Indonesia." />
 
     <title><?php wp_title('|', true, 'right'); ?></title>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
-    <link rel="shortcut icon" href="<?php echo get_option('greenhouse_favicon'); ?>">
+    <link rel="shortcut icon" href="<?php echo get_option('greenhouse_favicon'); ?>">	
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
           href="<?php echo get_template_directory_uri();?>/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114"
