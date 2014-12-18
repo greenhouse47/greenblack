@@ -1,7 +1,7 @@
 Greenblack Themes
 =================
 
-![image](http://www.img.greenboxindonesia.com/Hg.png) 
+![image](http://res.cloudinary.com/hmi-cabang-malang/image/upload/v1418902952/webfile/cabang_v_2_0.png) 
 
 
 Bootstrap is a responsive front-end toolkit from Twitter designed to kickstart web development, complete with core HTML, CSS, and JS for grids, type, forms, navigation, and many more components. Now you can use it with **WordPress** as a solid base to build custom themes quickly and easily.
@@ -177,6 +177,16 @@ __IMG Folder__
 * Pemindahan lokasi layout logo pada header ke kanan
 * Penambahan template author.php, sidebar-author.php, sidebar-blog.php, sidebar-office.php, sidebar-staff.php, 404.php, archive.php
 * Penambahan template mengambil dari theme-my-login: login-form.php, loginpassword-form.php, register-form.php, resetpass-form.php
+
+##v.2.0 of Greenblack ##
+* Quick Cache Page dan Post
+* Social Network Auto Poster
+* Updraft Plus (Auto Backup Managemen)
+* Revolution Slider
+* Facebook Comment Slider
+* EventON (Managemen Event/Agenda)
+* Basix Twitter Feed
+* Media Grid (Managemen Galeri)
 
 
 Changelog
