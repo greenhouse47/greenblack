@@ -41,9 +41,9 @@
 					} ?>
 				</div>
 				<div class="span3">
-					<h3>Development</h3>
-					<script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Ffeeds.feedburner.com%2FStatusWhatsUp&num=3&targ=y&utf=y"  charset="UTF-8" type="text/javascript"></script>
-					<noscript><a href="http://feed2js.org//feed2js.php?src=http%3A%2F%2Ffeeds.feedburner.com%2FStatusWhatsUp&num=3&targ=y&utf=y&html=y">View RSS feed</a></noscript>
+					<h3><i class="fa fa-github-square"></i> Development</h3>
+					<script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Ffeeds.feedburner.com%2FStatusWhatsUp&num=7&targ=y&utf=y"  charset="UTF-8" type="text/javascript"></script>
+					<noscript><a href="http://feed2js.org//feed2js.php?src=http%3A%2F%2Ffeeds.feedburner.com%2FStatusWhatsUp&num=7&targ=y&utf=y&html=y">View RSS feed</a></noscript>
 				</div>
 		    </div><!--/.row -->
 		</div><!-- /.container -->
@@ -53,7 +53,7 @@
 			<div class="footer-custom">
 				<div class="footer-colom-left">
 					<?php $greenhouse_footer_logo_activate = get_option('greenhouse_footer_logo_activate'); if(($greenhouse_footer_logo_activate == '') || ($greenhouse_footer_logo_activate == 'No')) { ?>
-					<div class="footer-logo"><a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_template_directory_uri();?>/img/footer_maskot_gb.png" alt="Greenboxindonesia"/></a></div>
+					<div class="footer-logo"><a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('name'); ?>"><img src="http://res.cloudinary.com/hmi-cabang-malang/image/upload/v1415608338/webfile/footer_cabang.png" alt="Greenboxindonesia"/></a></div>
 					<?php } else { ?>
 					<div class="footer-logo"><a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('greenhouse_footer_logo_url'); ?>" alt="<?php bloginfo('name'); ?>"/></a></div>
 					<?php } ?>
@@ -63,10 +63,10 @@
 					<p><?php echo get_option('greenhouse_kontak_text'); ?></p>
 					<p>Himpunan Mahasiswa Islam</p>
 					<p><a style="color:white;" href="http://wwww.register.hmi.or.id/" target="_blank">Program Pengembangan Layanan HMI Online</a></p>
-					<p>Copyright &copy; 1947 - <?php the_time('Y') ?>. All rights reserved.</p>
+					<p>Copyright &copy; 1947 - <?php the_time('Y') ?> All rights reserved.</p>
 				</div>
 				<div class="footer-menu-bottom">
-					<div class="footer-social-media"><h3>Ikuti Kami di Jaringan Social</h3></div>
+					<div class="footer-social-media"><h3><i class="fa fa-share-alt"></i> Ikuti Kami di Jaringan Sosial</h3></div>
 					<div class="footer-social-media-icon">
 						<a href="<?php echo get_option('greenhouse_facebook'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri();?>/ico/facebook.png"/>Facebook</a>
 						<a href="<?php echo get_option('greenhouse_googleplus'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri();?>/ico/googleplus.png"/>Google Plus</a>
@@ -76,9 +76,9 @@
 					<div class="footer-menu-policy"><?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?></div>
 					<div class="copyright-greenboxindonesia">
 						<p>Supported by</p>
-						<a href="http://www.greenboxindonesia.com" target="_blank"><img style="margin-bottom:15px;" src="<?php echo get_template_directory_uri();?>/img/greenboxindonesia.png" alt="Greenboxindonesia"/></a>
-						<p>Take the Future in your hands</p>
-						<p>Greenhouse Development Project by <a style="color:white;" href="http://www.greenboxindonesia.com" target="_blank">Greenboxindonesia</a></p>
+						<br/>
+						<a href="http://www.greenboxindonesia.com" target="_blank"><img style="margin-bottom:15px;" src="<?php echo get_template_directory_uri();?>/img/greenhouseproject.png" alt="Greenboxindonesia"/></a>
+<p>by <a style="color:white;" href="http://www.greenboxindonesia.com" target="_blank">Greenboxindonesia</a></p>
 					</div>
 				</div>
 			</div>

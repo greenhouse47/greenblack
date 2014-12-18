@@ -181,7 +181,7 @@ if (!function_exists('bootstrapwp_content_nav')):
         if ($wp_query->max_num_pages > 1) : ?>
 
         <nav id="<?php echo $nav_id; ?>" class="navigation" role="navigation">
-            <h4 class="assistive-text"><?php _e('Post navigation', 'bootstrapwp'); ?></h4>
+            <h4 class="assistive-text"><?php _e('<i class="fa fa-align-justify"></i> Post navigation', 'bootstrapwp'); ?></h4>
             <div class="nav-previous alignleft"><?php next_posts_link(
                 __('Older posts <span class="meta-nav">&rarr;</span>', 'bootstrapwp')
             ); ?></div>
@@ -276,7 +276,7 @@ endif;
 if (!function_exists('bootstrapwp_posted_on')) :
     function bootstrapwp_posted_on()
     {
-        printf(__('Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>','bootstrapwp'),
+        printf(__('Posted on <i class="fa fa-clock-o"></i> <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span> <i class="fa fa-user"></i>','bootstrapwp'),
             esc_url(get_permalink()),
             esc_attr(get_the_time()),
             esc_attr(get_the_date('c')),
@@ -389,7 +389,7 @@ add_filter('wp_title', 'bootstrapwp_wp_title', 10, 2);
  */
 function bootstrapwp_breadcrumbs()
 {
-    $home      = 'Home'; // text for the 'Home' link
+    $home      = '<i class="fa fa-home"></i>'; // text for the 'Home' link
     $before    = '<li class="active">'; // tag before the current crumb
     $after     = '</li>'; // tag after the current crumb
 
@@ -499,7 +499,7 @@ function bootstrapwp_breadcrumbs()
  */
 function bootstrapwp_breadcrumbs_staff()
 {
-    $home      = 'Home'; // text for the 'Home' link
+    $home      = '<i class="fa fa-home"></i>'; // text for the 'Home' link
     $before    = '<li class="active">'; // tag before the current crumb
     $after     = '</li>'; // tag after the current crumb
 
@@ -595,4 +595,305 @@ add_action( 'wp_head', 'insert_fb_in_head', 5 );
 
 //end of add open graph facebook.
 
+//requery plugin on themes //
+/**
+ * This file represents an example of the code that themes would use to register
+ * the required plugins.
+ *
+ * It is expected that theme authors would copy and paste this code into their
+ * functions.php file, and amend to suit.
+ *
+ * @package    TGM-Plugin-Activation
+ * @subpackage Example
+ * @version    2.3.6
+ * @author    Thomas Griffin <thomas thomasgriffinmedia.com="">
+ * @author    Gary Jones <gamajo gamajo.com="">
+ * @copyright  Copyright (c) 2012, Thomas Griffin
+ * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
+ * @link       https://github.com/thomasgriffin/TGM-Plugin-Activation
+ */
+
+/**
+ * Include the TGM_Plugin_Activation class.
+ */
+require_once dirname( __FILE__ ) . '/plugins/greenbox-plugin-activation.php';
+
+add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+/**
+ * Register the required plugins for this theme.
+ *
+ * In this example, we register two plugins - one included with the TGMPA library
+ * and one from the .org repo.
+ *
+ * The variable passed to tgmpa_register_plugins() should be an array of plugin
+ * arrays.
+ *
+ * This function is hooked into tgmpa_init, which is fired within the
+ * TGM_Plugin_Activation class constructor.
+ */
+function my_theme_register_required_plugins() {
+
+ /**
+  * Array of plugin arrays. Required keys are name and slug.
+  * If the source is NOT from the .org repo, then source is also required.
+  */
+ $plugins = array(
+
+  // This is an example of how to include a plugin pre-packaged with a theme
+	array(
+	   'name'         => 'Revolution Sliders', // The plugin name
+	   'slug'         => 'revslider', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/premium/revslider.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Basix Twitter', // The plugin name
+	   'slug'         => 'basix-twitter', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/premium/basix-twitter.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Event On Management', // The plugin name
+	   'slug'         => 'eventON', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/premium/eventON.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Facebook Commnet Slider', // The plugin name
+	   'slug'         => 'facebook_comment_slider', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/premium/facebook_comment_slider.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Formcraft', // The plugin name
+	   'slug'         => 'formcraft', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/premium/formcraft.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Profile Lembaga', // The plugin name
+	   'slug'         => 'lembaga', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/premium/lembaga.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Profile Staff', // The plugin name
+	   'slug'         => 'staff', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/premium/staff.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// ***** Required Plugin Standart edit by Anggo.ss http://www.albert.sukmono.web.id *****
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+	array(
+	   'name'         => 'Themes MyLogin', // The plugin name
+	   'slug'         => 'theme-my-login', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/theme-my-login.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Cloudinary Image Management', // The plugin name
+	   'slug'         => 'cloudinary-image-management-and-manipulation-in-the-cloud-cdn', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/cloudinary-image-management-and-manipulation-in-the-cloud-cdn.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Configure SMTP', // The plugin name
+	   'slug'         => 'configure-smtp', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/configure-smtp.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Disquse Commnet System', // The plugin name
+	   'slug'         => 'disqus-comment-system', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/disqus-comment-system.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Google Sitemap Generator', // The plugin name
+	   'slug'         => 'google-sitemap-generator', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/google-sitemap-generator.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Simple Optimizer', // The plugin name
+	   'slug'         => 'simple-optimizer', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/simple-optimizer.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'TablePress', // The plugin name
+	   'slug'         => 'tablepress', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/tablepress.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'WP HTML Compression', // The plugin name
+	   'slug'         => 'wp-html-compression', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/wp-html-compression.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Quick Cache', // The plugin name
+	   'slug'         => 'quick-cache', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/quick-cache.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Social Network Auto Poster', // The plugin name
+	   'slug'         => 'social-networks-auto-poster-facebook-twitter-g', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/social-networks-auto-poster-facebook-twitter-g.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+	array(
+	   'name'         => 'Updraft Plus', // The plugin name
+	   'slug'         => 'updraftlus', // The plugin slug (typically the folder name)
+	   'source'       => get_stylesheet_directory() . '/plugins/standart/updraftplus.zip', // The plugin source
+	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
+	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
+	),
+
+  // This is an example of how to include a plugin from the WordPress Plugin Repository
+	//array(
+	   //'name'   => 'Disqus Comment System',
+	   //'slug'   => 'disqus-comment-system',
+	   //'required'  => false,
+	//),
+
+ );
+
+ // Change this to your theme text domain, used for internationalising strings
+ $theme_text_domain = 'greenhouse';
+
+ /**
+  * Array of configuration settings. Amend each line as needed.
+  * If you want the default strings to be available under your own theme domain,
+  * leave the strings uncommented.
+  * Some of the strings are added into a sprintf, so see the comments at the
+  * end of each line for what each argument will be.
+  */
+ $config = array(
+  'domain'         => $theme_text_domain,          // Text domain - likely want to be the same as your theme.
+  'default_path'   => '',                          // Default absolute path to pre-packaged plugins
+  'parent_menu_slug'  => 'themes.php',     // Default parent menu slug
+  'parent_url_slug'  => 'themes.php',     // Default parent URL slug
+  'menu'           => 'install-required-plugins',  // Menu slug
+  'has_notices'       => true,                        // Show admin notices or not
+  'is_automatic'     => false,         // Automatically activate plugins after installation or not
+  'message'    => '',       // Message to output right before the plugins table
+  'strings'        => array(
+   'page_title'                          => __( 'Install Required Plugins', $theme_text_domain ),
+   'menu_title'                          => __( 'Install Plugins', $theme_text_domain ),
+   'installing'                          => __( 'Installing Plugin: %s', $theme_text_domain ), // %1$s = plugin name
+   'oops'                                => __( 'Sesuatu yang tidak beres dengan plugin API.', $theme_text_domain ),
+   'notice_can_install_required'        => _n_noop( 'Tema ini membutuhkan plugin berikut: %1$s.', 'Tema ini membutuhkan plugin berikut: %1$s.' ), // %1$s = plugin name(s)
+   'notice_can_install_recommended'   => _n_noop( 'Tema ini merekomendasikan plugin berikut: %1$s.', 'Tema ini merekomendasikan plugin berikut: %1$s.' ), // %1$s = plugin name(s)
+   'notice_cannot_install'       => _n_noop( 'Maaf, tapi Anda tidak memiliki izin yang benar untuk menginstal plugin %s. Hubungi administrator situs ini untuk mendapatkan bantuan pada plugin diinstal.', 'Maaf, tapi Anda tidak memiliki izin yang benar untuk menginstal plugin %s. Hubungi administrator situs ini untuk mendapatkan bantuan pada plugin diinstal.' ), // %1$s = plugin name(s)
+   'notice_can_activate_required'       => _n_noop( 'Berikut ini plugin yang diperlukan keadaan tidak aktif: %1$s.', 'Berikut ini plugin yang diperlukan keadaan tidak aktif: %1$s.' ), // %1$s = plugin name(s)
+   'notice_can_activate_recommended'   => _n_noop( 'Berikut Plugin yang direkomendasikan saat ini tidak aktif: %1$s.', 'Berikut Plugin yang direkomendasikan saat ini tidak aktif: %1$s.' ), // %1$s = plugin name(s)
+   'notice_cannot_activate'      => _n_noop( 'Maaf, tapi Anda tidak memiliki izin untuk mengaktifkan plugin %s ini. Hubungi administrator situs ini untuk mendapatkan bantuan pada plugin yang akan diaktifkan.', 'Maaf, tapi Anda tidak memiliki izin untuk mengaktifkan plugin %s ini. Hubungi administrator situs ini untuk mendapatkan bantuan pada plugin yang akan diaktifkan.' ), // %1$s = plugin name(s)
+   'notice_ask_to_update'       => _n_noop( 'Berikut Plugin perlu diperbarui ke versi terbaru untuk memastikan kompatibilitas maksimum dengan tema ini: %1$s.', 'Berikut Plugin perlu diperbarui ke versi terbaru untuk memastikan kompatibilitas maksimum dengan tema ini: %1$s.' ), // %1$s = plugin name(s)
+   'notice_cannot_update'       => _n_noop( 'Maaf, tapi Anda tidak memiliki izin untuk memperbarui plugin %s. Hubungi administrator situs ini untuk mendapatkan bantuan pada plugin yang akan diperbarui.', 'Maaf, tapi Anda tidak memiliki izin untuk memperbarui plugin %s. Hubungi administrator situs ini untuk mendapatkan bantuan pada plugin yang akan diperbarui.' ), // %1$s = plugin name(s)
+   'install_link'           => _n_noop( 'Mulai Menginstal Plugin', 'Mulai Menginstal Plugin' ),
+   'activate_link'          => _n_noop( 'Aktifkan Plugin', 'Aktifkan Plugin' ),
+   'return'                              => __( 'Kembali ke Installer Plugin yang Diperlukan', $theme_text_domain ),
+   'plugin_activated'                    => __( 'Pengaktifan Plugin telah berhasil', $theme_text_domain ),
+   'complete'          => __( 'Semua plugin dipasang dan diaktifkan berhasil. %s', $theme_text_domain ), // %1$s = dashboard link
+   'nag_type'         => 'updated' // Determines admin notice type - can only be 'updated' or 'error'
+  )
+ );
+
+ tgmpa( $plugins, $config );
+
+}
+//End of top script
 ?>

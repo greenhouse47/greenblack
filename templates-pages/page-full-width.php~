@@ -23,10 +23,9 @@ get_header(); ?>
         </header>
 
         <div class="row content">
-		<div class="full-width-page">
-		    <?php the_content(); ?>
-		    <?php endwhile; // end of the loop. ?>
-		</div><!-- .full-width-page -->
+            <?php the_content(); ?>
+            <?php endwhile; // end of the loop. ?>
+
         </div><!-- .row content -->
     </div><!--/.container -->
 

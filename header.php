@@ -23,17 +23,18 @@
 	<meta property="og:description" 
   	content="Himpunan Mahasiswa Islam (Islamic Association Of University Students) Organisasi Mahasiswa yang di dirikan oleh Prof. Dr. H. Lafran Pane beserta 14 kawannya, pertama kali di bentuk di STI Jogjakarta tanggal 05 Februari 1947 dan sekarang sudah tersebar di seluruh Indonesia." />
 
-    <title><?php wp_title('|', true, 'right'); ?></title>
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
-    <link rel="shortcut icon" href="<?php echo get_option('greenhouse_favicon'); ?>">	
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+    	<title><?php wp_title('|', true, 'right'); ?></title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,greek-ext,cyrillic-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
+	<link rel="shortcut icon" href="http://res.cloudinary.com/hmi-cabang-malang/image/upload/v1416681864/webfile/favicon.png">	
+	<link rel="apple-touch-icon-precomposed" sizes="144x144"
           href="<?php echo get_template_directory_uri();?>/assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+	<link rel="apple-touch-icon-precomposed" sizes="114x114"
           href="<?php echo get_template_directory_uri();?>/assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+	<link rel="apple-touch-icon-precomposed" sizes="72x72"
           href="<?php echo get_template_directory_uri();?>/assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed"
+	<link rel="apple-touch-icon-precomposed"
           href="<?php echo get_template_directory_uri();?>/assets/ico/apple-touch-icon-57-precomposed.png">
     <?php wp_head(); ?>
 </head>
@@ -48,13 +49,13 @@
                 </a>
 		<div class="small-logo-header">
 			<?php $greenhouse_header_logo_activate = get_option('greenhouse_header_logo_activate'); if(($greenhouse_header_logo_activate == '') || ($greenhouse_header_logo_activate == 'No')) { ?>
-			<img src="<?php echo get_template_directory_uri();?>/img/logo_small_header.png">
+			<img src="http://res.cloudinary.com/hmi-cabang-malang/image/upload/v1415980156/webfile/logo_small_header_hmi.png">
 			<?php } else { ?>
 			<div><a href="<?php echo get_settings('home'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('greenhouse_header_logo_url'); ?>" alt="<?php bloginfo('name'); ?>" /></a></div>
 			<?php } ?>
 		</div>
                 <?php $greenhouse_title_header_activate = get_option('greenhouse_title_header_activate'); if(($greenhouse_title_header_activate == '') || ($greenhouse_title_header_activate == 'No')) { ?>
-                <a class="brand" href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">HMI Cabang Anda</a>
+                <a class="brand" href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">Nama Cabang Anda</a>
 		<?php } else { ?>
 			<div><a class="brand" href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php echo get_option('greenhouse_title_header_text'); ?></a></div>
 		<?php } ?>

@@ -403,3 +403,23 @@ __Other/Misc.__
 * Pemindahan lokasi layout logo pada header ke kanan
 * Penambahan template author.php, sidebar-author.php, sidebar-blog.php, sidebar-office.php, sidebar-staff.php, 404.php, archive.php
 * Penambahan template mengambil dari theme-my-login: login-form.php, loginpassword-form.php, register-form.php, resetpass-form.php
+
+= .9 = Desember 18, 2014 - Revisi Versi 2.0 by Anggo.ss
+* Pop Up Notifications - www.cabang.hmi.or.id - demo
+* Right Footer load RSS from News
+* Penambahan Fungsi Gallery Page
+* Edit Template Full Width Page
+* Facebook Comment - Guest Book
+* Default Demo Content for Slide Header on Homepage
+* Penempatan Logo Primer
+* Greenpanel "notice" before Footer
+* Formcraft - multi style form
+* Icon from font awesome
+* Footer widget
+* Default image
+* Syncron with repositori github
+* Function standart plugin required auto
+* Font Style (appercase & lowcase)
+* Header slider with plugin
+* Event management
+* Default Content Dummy For Community

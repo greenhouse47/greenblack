@@ -211,7 +211,7 @@ array( "name" => "Yout Contact",
 "desc" => "You can input your contact company in her.",
 "id" => $shortname."_kontak_text",
 "type" => "text",
-"std" => "Telp: +6200-000-00-00 | info@hmi.or.id"),
+"std" => "Telp: +62341-700-98-12 | mail: info@gb.co.id"),
  
 array( "type" => "close"),
 

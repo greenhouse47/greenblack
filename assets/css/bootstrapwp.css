@@ -24,7 +24,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     font-family: 'Antic Slab';
     src: url('../../fonts/antic_slab/AnticSlab-Regular.ttf') format('truetype');
 }*/
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,greek-ext,cyrillic-ext,greek,vietnamese,latin-ext,cyrillic);
 .clearfix {
   *zoom: 1;
 }
@@ -665,7 +665,8 @@ h2 {
   font-size: 31.5px;
 }
 h3 {
-  font-size: 24.5px;
+  font-size: 19px;
+  text-transform: uppercase;
 }
 h4 {
   font-size: 17.5px;
@@ -7475,4 +7476,10 @@ form#loginform p:first-of-type {
 	.home-map iframe {
 	width: 550px;
 	}
+	.full-width-page {
+	margin-left: 30px;
+}
+}
+.tweet-time a {
+color: #272727;
 }

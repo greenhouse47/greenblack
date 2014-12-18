@@ -26,7 +26,8 @@
 
     <title><?php wp_title('|', true, 'right'); ?></title>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
-    <link rel="shortcut icon" href="<?php echo get_option('greenhouse_favicon'); ?>">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="http://res.cloudinary.com/hmi-cabang-malang/image/upload/v1416681864/webfile/favicon.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
           href="<?php echo get_template_directory_uri();?>/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114"
@@ -48,7 +49,7 @@
                 </a>
 		<div class="small-logo-header">
 			<?php $greenhouse_header_logo_activate = get_option('greenhouse_header_logo_activate'); if(($greenhouse_header_logo_activate == '') || ($greenhouse_header_logo_activate == 'No')) { ?>
-			<img src="<?php echo get_template_directory_uri();?>/img/logo_small_header.png">
+			<img src="http://res.cloudinary.com/hmi-cabang-malang/image/upload/v1415980156/webfile/logo_small_header_hmi.png">
 			<?php } else { ?>
 			<div><a href="<?php echo get_settings('home'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('greenhouse_header_logo_url'); ?>" alt="<?php bloginfo('name'); ?>" /></a></div>
 			<?php } ?>
@@ -73,19 +74,11 @@
         </div>
     </div>
 <!-- End Header. Begin Template Content -->
-<div class="homepage-logo">
-			<?php $greenhouse_big_logo_activate = get_option('greenhouse_big_logo_activate'); if(($greenhouse_big_logo_activate == '') || ($greenhouse_big_logo_activate == 'No')) { ?>
-			<div><a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('name'); ?>"><img itemprop="logo" src="<?php echo get_template_directory_uri();?>/img/logo.svg" style="height:auto;width:109px;float:left;"></a></div>
-			<?php } else { ?>
-			<div><a href="<?php echo get_settings('home'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_option('greenhouse_big_logo_url'); ?>" alt="<?php bloginfo('name'); ?>" /></a></div>
-			<?php } ?>
-aku
-</div><!--/.homepage-logo -->
 <div class="container-homepage">
-	<!-- Background on Top Header Homepage -->
+	<!-- Revolution Slider shortcode -->
+	<?php putRevSlider("rev_slider_hmi","homepage") ?> 
    	 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<div class="container">
-		<?php putRevSlider("rev_slider_home_standard","homepage") ?> 
 		<div class="header-title-homepage">
 			<?php the_content(); ?>
 		</div><!--/.header-title-homepage -->
@@ -97,10 +90,9 @@ aku
 		<div class="row">
 			<div class="span-left">
 				<div class="span-left-content">
-					<div class="icon_title"><img itemprop="headline-news" src="<?php echo get_template_directory_uri();?>/img/siaran.svg" ></div>
 					<!-- Start headline title -->
 					<div class="title-headline">
-						<h3><?php echo get_option('greenhouse_title_headline_text'); ?></h3>
+						<h3><i class="fa fa-comments"></i> <?php echo get_option('greenhouse_title_headline_text'); ?></h3>
 					</div>
 					<!-- End Off headline title -->
 					<?php while (have_posts()) : the_post(); ?>
@@ -129,10 +121,9 @@ aku
 				</div><!-- /.span-left-content -->
 			</div><!-- /.span left -->
 			<div class="span-right">
-				<div class="icon_title"><img itemprop="notice_icon" src="<?php echo get_template_directory_uri();?>/img/pengumuman.svg" ></div>
 				<!-- Start headline title -->	
 				<div class="title-right-headline">			
-					<h3><?php echo get_option('greenhouse_title_rightheadline_text'); ?></h3>
+					<h3><i class="fa fa-bell"></i> <?php echo get_option('greenhouse_title_rightheadline_text'); ?></h3>
 				</div>
 				<!-- End Off headline title -->
 				<?php while (have_posts()) : the_post(); ?>
@@ -147,7 +138,7 @@ aku
 				<div class="span-right-news">
 					<div <?php post_class(); ?>>
 						<div class="title-right-headline">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title();?></a>
+							<i class="fa fa-check-square"></i>&nbsp;&nbsp;<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title();?></a>
 						</div>
 					</div><!-- /.post_class -->
 				</div><!-- /.span-right-news-->
@@ -160,15 +151,13 @@ aku
 <div class="container">
     <div class="row">
 		<div class="span4">
-			<div class="icon_title_two"><img itemprop="video_icon" src="<?php echo get_template_directory_uri();?>/img/video.svg" ></div>
-			<h3><?php echo get_option('greenhouse_title_video_text'); ?></h3>
+			<h3><i class="fa fa-youtube"></i> <?php echo get_option('greenhouse_title_video_text'); ?></h3>
 			<div class="span_video">
 				<?php echo stripslashes( get_option('greenhouse_video') );?>
 			</div>
 		</div>
 		<div class="span4">
-			<div class="icon_title_two"><img itemprop="suarakita_icon" src="<?php echo get_template_directory_uri();?>/img/suarakita.svg" ></div>
-			<h3><?php echo get_option('greenhouse_suarakita_text'); ?></h3>
+			<h3><i class="fa fa-bullhorn"></i> <?php echo get_option('greenhouse_suarakita_text'); ?></h3>
 			<?php while (have_posts()) : the_post(); ?>
 				<?php // reset the loop
 				endwhile;
@@ -181,7 +170,7 @@ aku
 				<div class="span-right-news">
 					<div <?php post_class(); ?>>
 						<div class="title-suara-kita">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title();?></a>
+							<i class="fa fa-angle-right"></i>&nbsp;<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title();?></a>
 						</div>
 					</div><!-- /.post_class -->
 				</div><!-- /.span-right-news-->
@@ -189,8 +178,7 @@ aku
 				endwhile; endif; ?>
 		</div>
 		<div class="span4">
-			<div class="icon_title_two"><img itemprop="agenda_icon" src="<?php echo get_template_directory_uri();?>/img/agenda.svg" ></div>
-			<h3><?php echo get_option('greenhouse_agenda_text'); ?></h3>
+			<h3><i class="fa fa-calendar-o"></i> <?php echo get_option('greenhouse_agenda_text'); ?></h3>
 			<?php while (have_posts()) : the_post(); ?>
 				<?php // reset the loop
 				endwhile;
@@ -203,7 +191,7 @@ aku
 				<div class="span-right-news">
 					<div <?php post_class(); ?>>
 						<div class="title-agenda">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title();?></a>
+							<i class="fa fa-angle-right"></i>&nbsp;<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title();?></a>
 						</div>
 					</div><!-- /.post_class -->
 				</div><!-- /.span-right-news-->
@@ -216,8 +204,7 @@ aku
     <div class="row">
 		<div class="span6">
 			<div class="home-berkarya">
-				<div class="icon_title_thre"><img itemprop="berkarya_icon" src="<?php echo get_template_directory_uri();?>/img/karya.svg" ></div>
-				<h3><?php echo get_option('greenhouse_karya_text'); ?></h3>
+				<h3><i class="fa fa-coffee"></i> <?php echo get_option('greenhouse_karya_text'); ?></h3>
 				<?php while (have_posts()) : the_post(); ?>
 					<?php // reset the loop
 					endwhile;
@@ -245,8 +232,7 @@ aku
 			</div>
 		</div>
 		<div class="span6">
-			<div class="icon_title_two"><img itemprop="lokasi_icon" src="<?php echo get_template_directory_uri();?>/img/lokasi.svg" ></div>
-			<h3><?php echo get_option('greenhouse_title_maps_text'); ?></h3>
+			<h3><i class="fa fa-thumb-tack"></i> <?php echo get_option('greenhouse_title_maps_text'); ?></h3>
 			<div class="home-map">
 				<?php echo stripslashes( get_option('greenhouse_maps') );?>
 			</div>
