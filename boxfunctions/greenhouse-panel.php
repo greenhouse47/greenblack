@@ -226,7 +226,7 @@ array( "name" => "Facebook Page",
 "desc" => "Insert The Full URL Location Of Your Social Account <br /><em>*leave blank if not use</em>",
 "id" => $shortname."_facebook",
 "type" => "text",
-"std" => "http://www.facebook.com/greenboxindonesia"),
+"std" => "http://www.facebook.com/hmiconnections"),
 
 array( "name" => "Google Plus",
 "desc" => "Insert The Full URL Location Of Your Social Account <br /><em>*leave blank if not use</em>",
@@ -238,7 +238,7 @@ array( "name" => "Twitter",
 "desc" => "Insert The Full URL Location Of Your Social Account <br /><em>*leave blank if not use</em>",
 "id" => $shortname."_twitter",
 "type" => "text",
-"std" => "http://www.twitter.com/greenbox_id"),
+"std" => "http://www.twitter.com/hmi_online"),
 	 
 array( "type" => "close"),
 

@@ -7483,3 +7483,6 @@ form#loginform p:first-of-type {
 .tweet-time a {
 color: #272727;
 }
+.twitter-text a {
+color: #000;
+}

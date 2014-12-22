@@ -7476,6 +7476,9 @@ form#loginform p:first-of-type {
 	.home-map iframe {
 	width: 550px;
 	}
+	.full-width-page {
+	margin-left: 30px;
+}
 }
 .tweet-time a {
 color: #272727;
