@@ -721,100 +721,66 @@ function my_theme_register_required_plugins() {
 // ***** Required Plugin Standart edit by Anggo.ss http://www.albert.sukmono.web.id *****
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-	array(
-	   'name'         => 'Themes MyLogin', // The plugin name
-	   'slug'         => 'theme-my-login', // The plugin slug (typically the folder name)
-	   'source'       => get_stylesheet_directory() . '/plugins/standart/theme-my-login.zip', // The plugin source
-	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
-	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
-	),
-
-	array(
-	   'name'         => 'Cloudinary Image Management', // The plugin name
-	   'slug'         => 'cloudinary-image-management-and-manipulation-in-the-cloud-cdn', // The plugin slug (typically the folder name)
-	   'source'       => get_stylesheet_directory() . '/plugins/standart/cloudinary-image-management-and-manipulation-in-the-cloud-cdn.zip', // The plugin source
-	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
-	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
-	),
-
-	array(
-	   'name'         => 'Disquse Comment System', // The plugin name
-	   'slug'         => 'disqus-comment-system', // The plugin slug (typically the folder name)
-	   'source'       => get_stylesheet_directory() . '/plugins/standart/disqus-comment-system.zip', // The plugin source
-	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
-	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
-	),
-
-	array(
-	   'name'         => 'Google Sitemap Generator', // The plugin name
-	   'slug'         => 'google-sitemap-generator', // The plugin slug (typically the folder name)
-	   'source'       => get_stylesheet_directory() . '/plugins/standart/google-sitemap-generator.zip', // The plugin source
-	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
-	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
-	),
-
-	array(
-	   'name'         => 'Simple Optimizer', // The plugin name
-	   'slug'         => 'simple-optimizer', // The plugin slug (typically the folder name)
-	   'source'       => get_stylesheet_directory() . '/plugins/standart/simple-optimizer.zip', // The plugin source
-	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
-	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
-	),
-
-	array(
-	   'name'         => 'WP HTML Compression', // The plugin name
-	   'slug'         => 'wp-html-compression', // The plugin slug (typically the folder name)
-	   'source'       => get_stylesheet_directory() . '/plugins/standart/wp-html-compression.zip', // The plugin source
-	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
-	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
-	),
-
-	array(
-	   'name'         => 'Quick Cache', // The plugin name
-	   'slug'         => 'quick-cache', // The plugin slug (typically the folder name)
-	   'source'       => get_stylesheet_directory() . '/plugins/standart/quick-cache.zip', // The plugin source
-	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
-	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
-	),
-
-	array(
-	   'name'         => 'Updraft Plus', // The plugin name
-	   'slug'         => 'updraftplus', // The plugin slug (typically the folder name)
-	   'source'       => get_stylesheet_directory() . '/plugins/standart/updraftplus.zip', // The plugin source
-	   'required'     => true, // If false, the plugin is only 'recommended' instead of required
-	   'version'     => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-	   'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-	   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-	   'external_url'    => '', // If set, overrides default API URL and points to an external URL
-	),
-
   // This is an example of how to include a plugin from the WordPress Plugin Repository
-	//array(
-	   //'name'   => 'Disqus Comment System',
-	   //'slug'   => 'disqus-comment-system',
-	   //'required'  => false,
-	//),
+	array(
+	   'name'   => 'Themes MyLogin',
+	   'slug'   => 'theme-my-login',
+	   'required'  => false,
+	),
+
+	array(
+	   'name'   => 'Cloudinary Image Management',
+	   'slug'   => 'cloudinary-image-management-and-manipulation-in-the-cloud-cdn',
+	   'required'  => false,
+	),
+
+	array(
+	   'name'   => 'Disquse Comment System',
+	   'slug'   => 'disqus-comment-system',
+	   'required'  => false,
+	),
+
+	array(
+	   'name'   => 'Google Sitemap Generator',
+	   'slug'   => 'google-sitemap-generator',
+	   'required'  => false,
+	),
+
+	array(
+	   'name'   => 'Simple Optimizer',
+	   'slug'   => 'simple-optimizer',
+	   'required'  => false,
+	),
+	
+	array(
+	   'name'   => 'WP HTML Compression',
+	   'slug'   => 'wp-html-compression',
+	   'required'  => false,
+	),	
+
+	array(
+	   'name'   => 'Quick Cache',
+	   'slug'   => 'quick-cache',
+	   'required'  => false,
+	),
+
+	array(
+	   'name'   => 'Updraft Plus',
+	   'slug'   => 'updraftplus',
+	   'required'  => false,
+	),
+
+	array(
+	   'name'   => 'Widget Importer & Exporter',
+	   'slug'   => 'widget-importer-exporter',
+	   'required'  => false,
+	),
+
+	array(
+	   'name'   => 'Wordpress Importer',
+	   'slug'   => 'wordpress-importer',
+	   'required'  => false,
+	),
 
  );
 
